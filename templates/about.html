@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/about.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <title>{% block title %}{{ title }} - MP3 YT Downloader{% endblock %}</title>
+</head>
+<body>
+{% include 'navbar.html' %}
+<div class="about-area">
+    <h1>About</h1>
+    <h2>You are using Version: {{ VERSION }}</h2>
+    <h2>This is a YT Downloader just made for fun. &copy;2022 Skyline69</h2>
+    <h2>Update: The current bitrate for downloads is set to 320kb/s, so it's even more high quality.</h2>
+    <h2>Be aware that this program is still in development!</h2>
+</div>
+<div class="changelog-area">
+    <h1>Changelog</h1>
+
+    <div class="changelog-block">
+        <h1>Version 0.0.5</h1>
+        <div class="changelog-list">
+            <p>Fixed major starting and installing issues</p>
+            <p>Removed virtual environment from start (it was causing issues)</p>
+            <p>Removed 'run.bat'</p>
+        </div>
+    </div>
+
+    <div class="changelog-block">
+        <h1>Version 0.0.4</h1>
+        <div class="changelog-list">
+            <p>Changed normal Python 3.10 to PyPy (Python 3.11) Interpreter, so it is much faster</p>
+            <p>Created changelog in about page</p>
+            <p>Implemented colored output in server console</p>
+        </div>
+
+    </div>
+
+</div>
+<script type="application/javascript">
+    document.getElementById("home-btn").onclick = function () {
+        location.href = "/";
+    };
+</script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block head %}
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}">
+        <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{% block title %}{{ title }} - MP3 YT Downloader{% endblock %}</title>
+    {% endblock %}
+</head>
+<body>
+{% include 'navbar.html' %}
+
+{% block content %}
+    <h1 id="maintitle">{% block status_title %}{{ status_title }}{% endblock %}</h1>
+    <form method="post" id="yt-link-form">
+        <input type="text" placeholder="Paste YT-Link here!" class="yt-link-input" id="yt-link-input-" name="yt-link"
+               autocomplete="off" spellcheck="false" required>
+        <br>
+        <button class="download-btn" type="submit">Download</button>
+    </form>
+{% endblock %}
+
+<script type="application/javascript">
+    document.getElementById("about-btn").onclick = function () {
+        location.href = "/about";
+    };
+
+</script>
+</body>
+</html>

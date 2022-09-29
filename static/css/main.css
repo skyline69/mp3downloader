@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200&display=swap');
+
+:root {
+    --dark: #232132;
+}
+
+body {
+    background-color: var(--dark);
+}
+
+#maintitle {
+    text-align: center;
+    font-family: 'Fjalla One', sans-serif;
+    color: rgb(255, 249, 161);
+    font-size: 100px;
+    user-select: none;
+    transition: all 0.2s;
+}
+
+
+
+.yt-link-input {
+    user-select: none;
+    font-family: 'Abel', sans-serif;
+    font-size: 19px;
+    border-radius: 6px;
+    color: black;
+    width: 550px;
+    margin: auto;
+    display: block;
+    height: 50px;
+    overflow: hidden;
+    top: 100px;
+    background-color:rgba(182, 182, 182, 0.5);
+    outline-offset:0px;
+    outline-color: #9688ff;
+    border:none;
+    text-align: center;
+    transition: all 0.2s;
+}
+
+.yt-link-input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: white;
+    opacity: 1; /* Firefox */
+  }
+  
+.yt-link-input:focus{
+    outline: none;
+    color: rgb(172, 238, 255);
+    background-color:rgba(91, 255, 70, 0.5);
+    border:none;
+    box-shadow: 0px 0.8px 16px 1px rgba(42, 255, 23, 0.411);
+    transition: all 0.2s;
+    
+}
+
+
+.download-btn {
+    width: 560px;
+    background-color: rgb(117, 126, 255);
+    margin: 0 auto;
+    display: block;
+    padding: 4px;
+    user-select: none;
+    cursor: pointer;
+    height: 60px;
+    display:block;
+    font-weight: 900;
+    font-size: 30px;
+    border: none;
+    overflow: hidden;
+    font-family: 'Source Sans Pro', sans-serif;
+    border-radius: 8px;
+    transition: all 0.2s;
+}
+
+.download-btn:hover {
+    background-color: rgb(146, 153, 255);
+}
+
+@media only screen and (max-width: 600px) {
+    #maintitle {
+        font-size: 50px;
+        transition: all 0.2s;
+    }
+
+    .download-btn {
+        width: 310px;
+        height: 45px;
+        font-size: 23px;
+        transition: all 0.2s;
+    }
+    .yt-link-input {
+        width: 300px;
+        font-size: 15px;
+        height: 40px;
+    }
+} 
