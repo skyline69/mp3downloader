@@ -12,22 +12,38 @@
 </head>
 <body>
 {% include 'navbar.html' %}
-
 {% block content %}
-    <h1 id="maintitle">{% block status_title %}{{ status_title }}{% endblock %}</h1>
-    <form method="post" id="yt-link-form">
-        <input type="text" placeholder="Paste YT-Link here!" class="yt-link-input" id="yt-link-input-" name="yt-link"
-               autocomplete="off" spellcheck="false" required>
-        <br>
-        <button class="download-btn" type="submit">Download</button>
-    </form>
+
+
+    <div id="videoBC">
+        <video id="videoBG" preload="none" poster="{{ url_for('static', filename='background.png') }}"
+               autoplay muted loop>
+            <source src="{{ url_for('static', filename='background.mp4') }}" type="video/mp4">
+        </video>
+    </div>
+    <div class="download-card">
+        <h1 id="maintitle">{% block status_title %}{{ status_title }}{% endblock %}</h1>
+        <div class="download-input">
+            <form method="post" id="yt-link-form">
+                <input type="text" placeholder="Paste YT-Link here!" class="yt-link-input" id="yt-link-input-"
+                       name="yt-link"
+                       autocomplete="off" spellcheck="false" required>
+                <br>
+                <button class="download-btn" type="submit">Download</button>
+            </form>
+        </div>
+    </div>
+
+
 {% endblock %}
 
 <script type="application/javascript">
     document.getElementById("about-btn").onclick = function () {
         location.href = "/about";
     };
-
 </script>
+<script language="JavaScript" src="{{ url_for('static', filename='scripts/jquery.js') }}"></script>
+<script language="JavaScript" src="{{ url_for('static', filename='scripts/mobile.js') }}"
+        type="text/javascript"></script>
 </body>
 </html>
