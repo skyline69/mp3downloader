@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text&display=swap');
+
+
+:root {
+    --dark: #232132;
+    --block-padding-top: 3px;
+    --changelog-w: 800px;
+    --changelog-title-size: 36px;
+    --p-len: 800px;
+
+    background-color: var(--dark);
+}
+
+.about-area {
+    padding-bottom: 2px;
+}
+h1 {
+    user-select: None;
+    color: #b4addb;
+    font-family: 'Rubik', sans-serif;
+}
+.about-area h1 {
+    font-size: 70px;
+    text-align: center;
+}
+
+.about-area h2 {
+    font-size: 20px;
+    text-align: center;
+}
+
+h2 {
+    user-select: None;
+    color: #b4addb;
+    font-family: 'Crimson Text', serif;
+}
+
+.changelog-area {
+    font-smooth: always;
+    user-select: none;
+    padding-top: var(--block-padding-top);
+    font-size: 34px;
+    text-align: center;
+}
+
+.changelog-area .changelog-block {
+    box-sizing: border-box;
+    box-shadow: 0 0 0 2px #9688ff inset;
+    display: block;
+    background-color: #645d94;
+    text-align: center;
+    color: white;
+    border: 1px solid #645d94;
+    border-radius: 12px;
+    width: var(--changelog-w);
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 12px;
+    margin: 18px auto 0;
+}
+
+
+.changelog-area .changelog-block h1 {
+    font-size: var(--changelog-title-size);
+    text-align: left;
+}
+
+.changelog-area .changelog-block p {
+    word-spacing: 2px;
+    white-space: pre-wrap;
+    word-break: break-all;
+    width: var(--p-len);
+    color: #bbc6d0;
+    font-family: 'Rubik', sans-serif;
+    text-align: left;
+    padding-top: 2px;
+    list-style-type: none;
+    font-size: 18px;
+}
+
+.changelog-area .changelog-block p::after {
+    content: '.';
+}
+
+.changelog-area .changelog-block .changelog-list {
+    line-height: 19px;
+}
+
+.changelog-area .changelog-block p::before {
+    content: '\2022';
+    margin-right: 10px;
+    display: inline-block;
+}
+
+@media only screen and (max-width: 600px) {
+    h1 {
+        font-size: 45px;
+    }
+
+    h2 {
+        font-size: 16px;
+    }
+
+    .changelog-area {
+        padding-top: calc(var(--block-padding-top) / 2);
+    }
+
+    .changelog-area .changelog-block {
+        width: calc(var(--changelog-w)*0.45);
+    }
+    .changelog-area .changelog-block p {
+        width: calc(var(--p-len)*0.4);
+    }
+} 
+
