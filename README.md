@@ -5,8 +5,6 @@
   <img src="https://www.professorguru.com.br/wa_images/icone-download-inverso.png?v=1fj3h2f" width="10%" height="10%">
 </div>
 <br>
-<img src="https://user-images.githubusercontent.com/67526259/193097374-7fe02281-1d4c-4435-97a8-fa54ea73374c.png">
+<img src="https://user-images.githubusercontent.com/67526259/204145799-a689aabc-f6c5-4233-94cf-ad6153472ae9.png" />
 <br><br>
-<h1>How it works</h1>
-coming soon..
-<br><br>
+<h3> Note: All downlaods are located in the <code>./DOWNLOADS</code> folder. </h3>
