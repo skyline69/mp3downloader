@@ -7,4 +7,4 @@
 <br>
 <img src="https://user-images.githubusercontent.com/67526259/204145799-a689aabc-f6c5-4233-94cf-ad6153472ae9.png" />
 <br><br>
-<h3> Note: All downlaods are located in the <code>./DOWNLOADS</code> folder. </h3>
+<h3> Note: All downloads are located in the <code>./DOWNLOADS</code> folder. </h3>
