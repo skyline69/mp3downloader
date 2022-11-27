@@ -9,7 +9,7 @@ import socket
 from waitress import serve
 from flask_compress import Compress
 
-VERSION = "v0.0.5"
+VERSION = "v0.0.7"
 
 os.system("title MP3 YT Downloader %s" % VERSION)
 
@@ -38,8 +38,11 @@ def main_page():
         yt_link = request.form.get("yt-link").encode()
 
         try:
+            
+
             yt = YouTube(yt_link.decode(), allow_oauth_cache=True)
-            formatted_title = yt.title.replace("&", "").replace(".", " ").replace("-", " ")
+            UNALLOWED_CHARS = ["\\", "/", ":", "*", "?", "\"", "<", ">", "|"]
+            formatted_title = "".join(["-" if char in UNALLOWED_CHARS else char for char in yt.title])
             formatted_author = yt.author.replace("- Topic", " ")
             yt.streams.filter(abr="160kbps", progressive=False).first().download(
                 filename="DOWNLOADS\%s.webm" % formatted_title)
@@ -73,4 +76,4 @@ def error(error_):
 if __name__ == "__main__":
     subprocess.run(["cls"], shell=True)
     print("Host: \033[93m%s\033[0m\nRunning on: \033[94mhttp://%s:8080\033[0m" % (socket.gethostname(), socket.gethostbyname(socket.gethostname())))
-    serve(app, host="0.0.0.0", port=8080)
+    serve(app, host="0.0.0.0", port=8080, threads=6)
