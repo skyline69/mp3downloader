@@ -9,7 +9,7 @@ import socket
 from waitress import serve
 from flask_compress import Compress
 
-VERSION = "v0.0.7"
+VERSION = "v0.0.8"
 
 os.system("title MP3 YT Downloader %s" % VERSION)
 
@@ -42,7 +42,7 @@ def main_page():
 
             yt = YouTube(yt_link.decode(), allow_oauth_cache=True)
             UNALLOWED_CHARS = ["\\", "/", ":", "*", "?", "\"", "<", ">", "|"]
-            formatted_title = "".join(["-" if char in UNALLOWED_CHARS else char for char in yt.title])
+            formatted_title = "".join(["-" if char in UNALLOWED_CHARS else char for char in yt.title.encode("ascii", "ignore").decode()])
             formatted_author = yt.author.replace("- Topic", " ")
             yt.streams.filter(abr="160kbps", progressive=False).first().download(
                 filename="DOWNLOADS\%s.webm" % formatted_title)
